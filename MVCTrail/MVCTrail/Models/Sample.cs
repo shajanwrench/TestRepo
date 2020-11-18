@@ -10,6 +10,7 @@ namespace MVCTrail.Models
         public int SID { get; set; }
         public string SName { get; set; }
         public string SNo { get; set; }
+        public string SPlace { get; set; }
         public List<Marks> marks { get; set; }
     }
 
