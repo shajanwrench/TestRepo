@@ -1,0 +1,55 @@
+﻿@model MVCTrail.Models.StudentInfo
+@{
+    ViewBag.Title = "StudentInfo";
+}
+<script src="~/Scripts/jquery-2.0.3.min.js"></script>
+<h2>StudentInfo</h2>
+<script>
+    $(document).ready(function () {
+        $("#Save").click(function () {
+            alert('@Model.marks[0].Mark');
+        });
+    });
+</script>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>StudentInfo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SID)
+            @Html.ValidationMessageFor(model => model.SID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SName)
+            @Html.ValidationMessageFor(model => model.SName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SNo)
+            @Html.ValidationMessageFor(model => model.SNo)
+        </div>
+
+        <p>
+            <input type="button" value="Create" id="Save"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
